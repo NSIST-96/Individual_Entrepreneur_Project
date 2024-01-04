@@ -23,5 +23,11 @@ namespace Individual_Entrepreneur_Project.View.Windows
         {
             InitializeComponent();
         }
+
+        private void Login_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
     }
 }
