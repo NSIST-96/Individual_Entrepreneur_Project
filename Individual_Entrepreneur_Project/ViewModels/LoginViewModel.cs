@@ -1,9 +1,12 @@
-﻿using Individual_Entrepreneur_Project.ViewModels.Base;
+﻿using Individual_Entrepreneur_Project.Infrastructure.Commands;
+using Individual_Entrepreneur_Project.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace Individual_Entrepreneur_Project.ViewModels
 {
@@ -20,5 +23,24 @@ namespace Individual_Entrepreneur_Project.ViewModels
         }
 
         #endregion
+
+        #region Commands
+
+        #region CloseApplicationCommand
+        public ICommand CloseApplicationCommand { get; }
+        private void OnCloseApplicationCommandExecuted(object p) { Application.Current.Shutdown(); }
+        private bool CanCloseApplicationCommandExecute(object p) => true;
+        #endregion
+
+        #endregion
+
+        public LoginViewModel()
+        {
+            #region Commands
+
+            CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
+
+            #endregion
+        }
     }
 }

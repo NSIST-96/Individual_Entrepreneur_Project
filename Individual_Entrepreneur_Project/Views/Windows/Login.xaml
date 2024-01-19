@@ -20,12 +20,12 @@
     </Window.DataContext>
 
     <Border CornerRadius="12">
-        <!--<Border.Background>
-            <ImageBrush ImageSource="/Images/back.jpg"/>
-        </Border.Background>-->
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/back2.jpg"/>
+        </Border.Background>
         <Border CornerRadius="12"
-            BorderThickness="1"
-            Opacity="0.6">
+            BorderThickness="2"
+            Opacity="0.8">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#462AD8" Offset="0"/>
@@ -49,7 +49,7 @@
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="330"/>
+                        <ColumnDefinition Width="354"/>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="25"/>
@@ -82,7 +82,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Grid.Column="3"
-                            Command=""/>
+                            Command="{Binding CloseApplicationCommand}"/>
 
                 </Grid>
             </Grid>
