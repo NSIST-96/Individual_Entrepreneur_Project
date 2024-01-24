@@ -42,6 +42,20 @@ namespace Individual_Entrepreneur_Project.ViewModels
 
         }
 
+        private bool CanTryLoginCommandExecute(object p) => true;
+
+        #endregion
+
+        #region GetRegistrationCommand
+
+        public ICommand GetRegistrationCommand { get; }
+        private void OnGetRegistrationCommandExecuted(object p)
+        {
+
+        }
+
+        private bool CanGetRegistrationCommandExecute(object p) => true;
+
         #endregion
 
         #endregion
@@ -52,6 +66,8 @@ namespace Individual_Entrepreneur_Project.ViewModels
 
             CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
             MinimizeWindowCommand = new LambdaCommand(OnMinimizeWindowCommandExecuted, CanMinimizeWindowCommandExecute);
+            TryLoginCommand = new LambdaCommand(OnTryLoginCommandExecuted, CanTryLoginCommandExecute);
+            GetRegistrationCommand = new LambdaCommand(OnGetRegistrationCommandExecuted, CanGetRegistrationCommandExecute);
 
             #endregion
         }

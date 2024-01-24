@@ -186,7 +186,8 @@
                                 FontSize="17"
                                 FontFamily="Montserrat"
                                 Cursor="Hand"
-                                HorizontalAlignment="Center">
+                                HorizontalAlignment="Center"
+                                Command="{Binding GetRegistrationCommand}">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Background"
