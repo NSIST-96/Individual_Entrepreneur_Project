@@ -32,6 +32,13 @@ namespace Individual_Entrepreneur_Project.ViewModels
         private bool CanCloseApplicationCommandExecute(object p) => true;
         #endregion
 
+        #region MinimizeWindowCommand
+        public ICommand MinimizeWindowCommand { get; }
+        private void OnMinimizeWindowCommandExecuted(object p) { p = WindowState.Minimized; }
+        private bool CanMinimizeWindowCommandExecute(object p) => true;
+
+        #endregion
+
         #endregion
 
         public LoginViewModel()
@@ -39,7 +46,7 @@ namespace Individual_Entrepreneur_Project.ViewModels
             #region Commands
 
             CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
-
+            MinimizeWindowCommand = new LambdaCommand(OnMinimizeWindowCommandExecuted, CanMinimizeWindowCommandExecute);
             #endregion
         }
     }

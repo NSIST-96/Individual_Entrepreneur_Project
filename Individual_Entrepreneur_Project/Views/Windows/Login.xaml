@@ -25,7 +25,7 @@
         </Border.Background>
         <Border CornerRadius="12"
             BorderThickness="2"
-            Opacity="0.8">
+            Opacity="0.7">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#462AD8" Offset="0"/>
@@ -71,7 +71,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Grid.Column="2"
-                            Command=""/>
+                            Click="btnMinimize_Click"/>
 
                     <Button x:Name="btnClose"
                             Background="#F82828"
@@ -84,7 +84,137 @@
                             Grid.Column="3"
                             Command="{Binding CloseApplicationCommand}"/>
 
+
                 </Grid>
+                <StackPanel Grid.Row="1"
+                            Width="350"
+                            Orientation="Vertical"
+                            Margin="0,0,0,0">
+                    
+                    <TextBlock Text="Личный кабинет"
+                               Foreground="White"
+                               Margin="0,30,0,0"
+                               FontSize="40"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Пользователь:"
+                               Margin="10,180,0,0"
+                               Foreground="White"
+                               FontSize="20"
+                               FontWeight="Light"
+                               FontFamily="Montserrat"
+                               HorizontalAlignment="Left"/>
+
+                    <TextBox x:Name="txtUsername"
+                             Foreground="White"
+                             Background="Transparent"
+                             CaretBrush="LightGray"
+                             BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,1"
+                             FontSize="20"
+                             FontWeight="Light"
+                             FontFamily="Montserrat"
+                             Margin="10,0,0,0"/>
+
+                    <TextBlock Text="Пароль:"
+                               Margin="10,20,0,0"
+                               Foreground="White"
+                               FontSize="20"
+                               FontWeight="Light"
+                               FontFamily="Montserrat"
+                               HorizontalAlignment="Left"/>
+
+                    <PasswordBox x:Name="txtPassword"
+                             Foreground="White"
+                             Background="Transparent"
+                             CaretBrush="LightGray"
+                             BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,1"
+                             FontSize="20"
+                             FontWeight="Light"
+                             FontFamily="Montserrat"
+                             Margin="10,0,0,0"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="btnLogin"
+                                BorderThickness="0"
+                                Content="Войти"
+                                Foreground="White"
+                                FontSize="19"
+                                FontFamily="Montserrat"
+                                Cursor="Hand"
+                                Margin="0,20"
+                                HorizontalAlignment="Center">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background"
+                                            Value="#2828F8"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver"
+                                                 Value="True">
+                                            <Setter Property="Background"
+                                                    Value="#28aeed"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                            CornerRadius="20"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button x:Name="btnRegistration"
+                                Grid.Column="1"
+                                BorderThickness="0"
+                                Content="Регистрация"
+                                Foreground="White"
+                                FontSize="17"
+                                FontFamily="Montserrat"
+                                Cursor="Hand"
+                                HorizontalAlignment="Center">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background"
+                                            Value="#2828F8"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver"
+                                                 Value="True">
+                                            <Setter Property="Background"
+                                                    Value="#28aeed"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                            CornerRadius="20"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                    
+
+                </StackPanel>
             </Grid>
 
         </Border>
