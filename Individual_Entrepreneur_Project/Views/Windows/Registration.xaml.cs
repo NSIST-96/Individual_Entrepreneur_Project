@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Individual_Entrepreneur_Project.View.Windows;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Individual_Entrepreneur_Project.Views.Windows
@@ -22,6 +23,16 @@ namespace Individual_Entrepreneur_Project.Views.Windows
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void btnGetLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Registration registration = this;
+            Login login = new Login();
+
+            login.Show();
+            login.Focus();
+            registration.Close();
         }
     }
 }

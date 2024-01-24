@@ -1,4 +1,4 @@
-﻿<Window x:Class="Individual_Entrepreneur_Project.View.Windows.Registration"
+﻿<Window x:Class="Individual_Entrepreneur_Project.View.Windows.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -21,7 +21,7 @@
 
     <Border CornerRadius="12">
         <Border.Background>
-            <ImageBrush ImageSource="/Images/LogBack.jpg"/>
+            <ImageBrush ImageSource="/images/logback.jpg"/>
         </Border.Background>
         <Border CornerRadius="12"
             BorderThickness="2"
@@ -187,7 +187,7 @@
                                 FontFamily="Montserrat"
                                 Cursor="Hand"
                                 HorizontalAlignment="Center"
-                                Command="{Binding GetRegistrationCommand}">
+                                Click="btnGetRegistration_Click">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Background"
