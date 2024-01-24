@@ -6,8 +6,8 @@
         xmlns:vm="clr-namespace:Individual_Entrepreneur_Project.ViewModels"
         xmlns:local="clr-namespace:Individual_Entrepreneur_Project.View.Windows"
         mc:Ignorable="d"
-        d:DataContext="vm:LoginViewModel"
-        Title="{Binding Path=Title}" Height="550" Width="800"
+        Title="{Binding Path=Title}" 
+        Height="550" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -21,11 +21,11 @@
 
     <Border CornerRadius="12">
         <Border.Background>
-            <ImageBrush ImageSource="/Images/back2.jpg"/>
+            <ImageBrush ImageSource="/Images/LogBack.jpg"/>
         </Border.Background>
         <Border CornerRadius="12"
             BorderThickness="2"
-            Opacity="0.7">
+            Opacity="0.9">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#462AD8" Offset="0"/>
@@ -150,7 +150,8 @@
                                 FontFamily="Montserrat"
                                 Cursor="Hand"
                                 Margin="0,20"
-                                HorizontalAlignment="Center">
+                                HorizontalAlignment="Center"
+                                Command="{Binding TryLoginCommand}">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Background"

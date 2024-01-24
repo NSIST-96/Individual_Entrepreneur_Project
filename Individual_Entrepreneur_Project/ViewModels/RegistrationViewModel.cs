@@ -1,23 +1,12 @@
-﻿using Individual_Entrepreneur_Project.Infrastructure.Commands;
-using Individual_Entrepreneur_Project.ViewModels.Base;
+﻿using System.Windows.Input;
 using System.Windows;
-using System.Windows.Input;
+using Individual_Entrepreneur_Project.ViewModels.Base;
+using Individual_Entrepreneur_Project.Infrastructure.Commands;
 
 namespace Individual_Entrepreneur_Project.ViewModels
 {
-    internal class LoginViewModel : ViewModel
+    internal class RegistrationViewModel : ViewModel
     {
-        #region Title
-
-        private string _Title = "LOGIN";
-
-        public string Title
-        {
-            get => _Title;
-            set => Set(_Title, value);
-        }
-
-        #endregion
 
         #region Commands
 
@@ -34,19 +23,9 @@ namespace Individual_Entrepreneur_Project.ViewModels
 
         #endregion
 
-        #region TryLoginCommand
-
-        public ICommand TryLoginCommand { get; }
-        private void OnTryLoginCommandExecuted(object p)
-        {
-
-        }
-
         #endregion
 
-        #endregion
-
-        public LoginViewModel()
+        public RegistrationViewModel()
         {
             #region Commands
 

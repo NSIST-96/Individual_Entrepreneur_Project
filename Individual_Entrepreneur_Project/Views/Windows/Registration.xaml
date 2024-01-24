@@ -1,0 +1,230 @@
+﻿<Window x:Class="Individual_Entrepreneur_Project.Views.Windows.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Individual_Entrepreneur_Project.ViewModels"
+        xmlns:local="clr-namespace:Individual_Entrepreneur_Project.Views.Windows"
+        mc:Ignorable="d"
+        Title="Registration" 
+        Height="550" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent"
+        MouseDown="Login_MouseDown">
+
+    <Window.DataContext>
+        <vm:RegistrationViewModel/>
+    </Window.DataContext>
+
+    <Border CornerRadius="12">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/RegBack.jpg"/>
+        </Border.Background>
+        <Border CornerRadius="12"
+        BorderThickness="2"
+        Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#5B0448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="319"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="9"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="REGISTRATION FORM"
+                           FontSize="20"
+                           FontFamily="Montserrat"
+                           Foreground="White"
+                           Grid.Column="1"/>
+
+                    <Button x:Name="btnMinimize"
+                        Background="#2828F8"
+                        BorderThickness="0"
+                        Content="_"
+                        Foreground="White"
+                        FontSize="16"
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        Grid.Column="2"
+                        Click="btnMinimize_Click"/>
+
+                    <Button x:Name="btnClose"
+                        Background="#F82828"
+                        BorderThickness="0"
+                        Content="X"
+                        Foreground="White"
+                        FontSize="16"
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        Grid.Column="3"
+                        Command="{Binding CloseApplicationCommand}"/>
+
+
+                </Grid>
+                <StackPanel Grid.Row="1"
+                        Width="350"
+                        Orientation="Vertical"
+                        Margin="0,0,0,0">
+
+                    <TextBlock Text="Регистрация"
+                           Foreground="White"
+                           Margin="0,40,0,0"
+                           FontSize="40"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"
+                           HorizontalAlignment="Center"/>
+                    
+                    <TextBlock Text="нового пользователя"
+                           Foreground="White"
+                           Margin="0,0,0,0"
+                           FontSize="30"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"
+                           HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Пользователь:"
+                           Margin="10,180,0,0"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Light"
+                           FontFamily="Montserrat"
+                           HorizontalAlignment="Left"/>
+
+                    <TextBox x:Name="txtUsername"
+                         Foreground="White"
+                         Background="Transparent"
+                         CaretBrush="LightGray"
+                         BorderBrush="DarkGray"
+                         BorderThickness="0,0,0,1"
+                         FontSize="20"
+                         FontWeight="Light"
+                         FontFamily="Montserrat"
+                         Margin="10,0,0,0"/>
+
+                    <TextBlock Text="Пароль:"
+                           Margin="10,20,0,0"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Light"
+                           FontFamily="Montserrat"
+                           HorizontalAlignment="Left"/>
+
+                    <PasswordBox x:Name="txtPassword"
+                         Foreground="White"
+                         Background="Transparent"
+                         CaretBrush="LightGray"
+                         BorderBrush="DarkGray"
+                         BorderThickness="0,0,0,1"
+                         FontSize="20"
+                         FontWeight="Light"
+                         FontFamily="Montserrat"
+                         Margin="10,0,0,0"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="btnLogin"
+                            BorderThickness="0"
+                            Content="Войти"
+                            Foreground="White"
+                            FontSize="19"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Margin="0,20"
+                            HorizontalAlignment="Center">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background"
+                                        Value="#2828F8"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver"
+                                             Value="True">
+                                            <Setter Property="Background"
+                                                Value="#28aeed"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button x:Name="btnRegistration"
+                            Grid.Column="1"
+                            BorderThickness="0"
+                            Content="Регистрация"
+                            Foreground="White"
+                            FontSize="17"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            HorizontalAlignment="Center">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background"
+                                        Value="#2828F8"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver"
+                                             Value="True">
+                                            <Setter Property="Background"
+                                                Value="#28aeed"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+
+
+                </StackPanel>
+            </Grid>
+
+        </Border>
+    </Border>
+</Window>
